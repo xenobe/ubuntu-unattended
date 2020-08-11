@@ -53,6 +53,7 @@ tasksel tasksel/first                                       multiselect Basic Ub
 d-i pkgsel/upgrade                                          select      safe-upgrade
 d-i pkgsel/update-policy                                    select      none
 d-i pkgsel/updatedb                                         boolean     true
+d-i pkgsel/include string openssh-server net-tools
 
 # disk partitioning
 d-i partman/confirm_write_new_label                         boolean     true
@@ -75,8 +76,6 @@ d-i partman-partitioning/confirm_write_new_label            boolean     true
 d-i grub-installer/only_debian                              boolean     true
 d-i grub-installer/with_other_os                            boolean     true
 
-
-d-i pkgsel/include string openssh-server
 
 # finish installation
 d-i finish-install/reboot_in_progress                       note
