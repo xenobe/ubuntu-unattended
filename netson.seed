@@ -38,7 +38,7 @@ d-i passwd/user-fullname                                    string      {{userna
 d-i passwd/username                                         string      {{username}}
 d-i passwd/user-password-crypted                            password    {{pwhash}}
 d-i passwd/user-uid                                         string
-d-i user-setup/allow-password-weak                          boolean     false
+d-i user-setup/allow-password-weak                          boolean     true
 d-i passwd/user-default-groups                              string      adm cdrom dialout lpadmin plugdev sambashare
 d-i user-setup/encrypt-home                                 boolean     false
 
@@ -74,6 +74,9 @@ d-i partman-partitioning/confirm_write_new_label            boolean     true
 # grub boot loader
 d-i grub-installer/only_debian                              boolean     true
 d-i grub-installer/with_other_os                            boolean     true
+
+
+d-i pkgsel/include string openssh-server
 
 # finish installation
 d-i finish-install/reboot_in_progress                       note
